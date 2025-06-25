@@ -1,0 +1,152 @@
+.game-container {
+    max-width: 427px;
+    max-height: 500px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #e0f7fa);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #27ddce;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.smaillTitle {
+    //   text-align: center;
+    font-size: 12px;
+    margin-bottom: -15px;
+    color: #e252b4;
+}
+
+.text {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.start-btn {
+    background-color: #e252b4;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #e5ca41;
+    }
+}
+
+.game-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.question {
+    font-size: 3.5rem;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    padding: 0.5rem;
+    font-size: 2rem;
+    width: 71%;
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+}
+
+button {
+    margin-top: 1rem;
+    background-color: #27ddce;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Varela Round', sans-serif;
+
+    &:hover {
+        background-color: #23d653;
+    }
+}
+
+.game-over {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e64a19;
+}
+
+
+
+.answer-display {
+    font-size: 2rem;
+    margin: 1rem 0;
+    min-height: 2.5rem;
+    background: #fff;
+    padding: 0.5rem;
+    border: 2px solid #666;
+    border-radius: 8px;
+}
+
+.buttons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    button {
+        width: 64px;
+        height: 64px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #e252b4, #e252b4);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s, background 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #81d4fa, #039be5);
+        }
+    }
+}
+
+.action-buttons {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .delete {
+        background: linear-gradient(135deg, #ef5350, #d32f2f);
+    }
+
+    .submit {
+        background: linear-gradient(135deg, #86dbd4, #27ddce);
+    }
+
+    button {
+        width: 132px;
+        height: 60px;
+        font-size: 1.5rem;
+        border-radius: 8%;
+        color: #fff;
+        border: none;
+    }
+}
