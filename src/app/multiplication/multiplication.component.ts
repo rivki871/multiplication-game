@@ -82,7 +82,7 @@ export class MultiplicationComponent {
         this.playWinSound();
         this.gameOverMessage = `!המשחק נגמר! פתרת ${this.score} תרגילים נכונים`;
       }
-    }, 3000);
+    }, 1000);
   }
 
   playWinSound() {
