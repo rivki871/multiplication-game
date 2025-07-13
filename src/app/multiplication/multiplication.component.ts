@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import confetti from 'canvas-confetti';
 
@@ -23,7 +23,21 @@ export class MultiplicationComponent {
 
   constructor() { }
 
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    const key = event.key;
+    const number = parseInt(key, 10);
+    if (!isNaN(number) && number >= 0 && number <= 9) {
+      this.selectNumber(number);
+    } else if (key === 'Backspace') {
+      this.clearAnswer();
+    } else if (key === 'Enter') {
+      this.checkAnswer();
+    }
+  }
+
   startGame() {
+    if (this.isGameActive) return; 
     this.score = 0;
     this.timeLeft = 60;
     this.isGameActive = true;
@@ -52,14 +66,16 @@ export class MultiplicationComponent {
   }
 
   checkAnswer() {
-    if (!this.isGameActive) return;
+    if (!this.isGameActive) return;//
     const answer = parseInt(this.userAnswer, 10);
     if (answer === this.currentAnswer) {
       this.score++;
       this.launchConfetti();
     }
     this.userAnswer = '';
-    this.generateQuestion();
+    if (this.isGameActive) {
+      this.generateQuestion();
+    }
   }
 
   launchConfetti() {
@@ -80,7 +96,7 @@ export class MultiplicationComponent {
         clearInterval(this.timer);
         this.isGameActive = false;
         this.playWinSound();
-        this.gameOverMessage = `!המשחק נגמר! פתרת ${this.score} תרגילים נכונים`;
+        this.gameOverMessage = `!המשחק נגמר! פתרת ${this.score} תרגילים נכונים 😄`;
       }
     }, 1000);
   }
